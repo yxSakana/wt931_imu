@@ -1,0 +1,15 @@
+<launch>
+<!--
+    <node respwan="true" pkg="wt931" type="imu_node" name="joy_node">
+        <param name="m_serial_port_name" type="string" value="/dev/wt931">
+        <param name="m_baud_rate" type="int" value="921600">
+    </node>
+-->
+<!--     <env name="ROSCONSOLE_CONFIG_FILE" value="$(find wt931)/config/rosconsole.conf"/> -->
+    <node pkg="wt931" type="main_cpp" name="main_cpp" output="screen">
+        <param name="serial_port_name" value="/dev/wt931" />
+        <param name="baud_rate" value="460800" type="int"/>
+<!--         <param name="baud_rate" value="921600" type="int"/> -->
+        <param name="pub_topic_name" value="imu_data" />
+    </node>
+</launch>
